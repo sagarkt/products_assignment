@@ -3,7 +3,6 @@
     "name": "bower-rails generated lib assets",
     "dependencies": {
       "angular": "v1.7.9",
-      "bootstrap": "v3.3.7",
       "angular-ui-router": "v1.0.24"
     }
   },

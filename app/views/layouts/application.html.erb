@@ -12,6 +12,8 @@
   </head>
 
   <body ng-cloak ng-app="angularApp" ng-strict-di>
+    <%= render partial: "layouts/header" %>
     <%= yield %>
+    <%= render partial: "layouts/footer" %>
   </body>
 </html>

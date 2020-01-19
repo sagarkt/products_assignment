@@ -5,10 +5,13 @@ require 'action_controller/railtie'
 require 'active_model/railtie'
 require 'sprockets/railtie'
 require 'rails/test_unit/railtie'
+require 'dotenv';
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+Dotenv.load "config/environment_variables/.env.#{Rails.env}"
 
 module AssignmentProducts
   class Application < Rails::Application
@@ -19,5 +22,7 @@ module AssignmentProducts
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    config.eager_load_paths += Dir[Rails.root.join('lib', '{**}')]
   end
 end

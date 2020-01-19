@@ -1,0 +1,13 @@
+# config/redis.yml
+default:
+  db: 0
+  host: localhost
+  port: 6379
+  network_timeout: 5
+  # namespace: rento_api_default
+development:
+  # namespace: rento_api_dev
+test:
+  # namespace: rento_api_test
+production:
+  # namespace: rento_api_prod

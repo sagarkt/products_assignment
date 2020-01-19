@@ -18,8 +18,6 @@
         templateUrl: 'angular-app/products/templates/index.html',
         controller: 'ProductsCtrl'
       });
-
-    $urlRouterProvider.otherwise('/products/');
   };
 
 })();

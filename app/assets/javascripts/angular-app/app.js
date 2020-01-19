@@ -1,7 +1,8 @@
 ( function() {
   'use strict';
 
-  angular.module('angularApp', ['templates', 'angularApp.products'])
+  angular.module('angularApp', ['templates',
+    'angularApp.products', 'angularApp.home_page'])
   .config([
     '$httpProvider', config
   ]);

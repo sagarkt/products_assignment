@@ -6,7 +6,7 @@
 
   function ProductsCtrl($scope, $state) {
     function init() {
-      console.log('$state', $state);
+      // console.log('$state', $state);
     }
 
     init();
