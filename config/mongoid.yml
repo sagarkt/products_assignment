@@ -167,8 +167,10 @@ production:
     default:
       database: assignment_products_production
       hosts:
-        - localhost:27017
+        - mongodb+srv://cluster0-xjqs0.mongodb.net/test
       options:
+        username: 'liquidDiamond'
+        password: 'liquidDiamond@121@123'
         read:
           mode: :primary
         max_pool_size: 5
