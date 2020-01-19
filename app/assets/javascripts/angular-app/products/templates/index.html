@@ -1,1 +1,61 @@
-<div>products list</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="row">
+        <form name="searchForm" ng-submit="filterProducts()" novalidate>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="searchType">Search Type</label>
+              <select id="searchType" class="form-control"
+                      ng-model="filter.searchType">
+                <option ng-repeat="searchType in availableSearchTypes"
+                        value="{{searchType.value}}">{{searchType.label}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="searchText">Search Text</label>
+              <input type="text" class="form-control" ng-model="filter.searchText"
+                     id="searchText" placeholder="Type Search Text...">
+            </div>
+          </div>
+          <div class="col-md-2" style="margin-top: 25px;">
+            <div class="form-group">
+              <input type="submit" class="form-control"
+                     id="submit" value="Search">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <th>Name</th>
+            <th>Model</th>
+            <th>Brand</th>
+            <th>Year</th>
+            <th>RAM</th>
+            <th>External Storage</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="product in products">
+              <td><a href="#!/product/{{product._id}}">{{product.name}}</a></td>
+              <td>{{product.model}}</td>
+              <td>{{product.brand}}</td>
+              <td>{{product.year}}</td>
+              <td>{{product.ram}}</td>
+              <td>{{product.external_storage}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <maza-pagination change-page="changePage"
+                       total-items="filter.totalProducts"
+                       per-page-items="filter.pageLimit"
+                       current-page="filter.pageNo"/>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

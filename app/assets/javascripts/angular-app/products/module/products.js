@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('angularApp.products', [
-    'ui.router',
+    'angularApp.common', 'ui.router',
   ])
   .config([
     '$stateProvider',
@@ -13,10 +13,17 @@
   function config($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('productsIndex',{
-        url: '/products/',
+      .state('productsSearch',{
+        url: '/products?pageLimit&pageNo&searchText&searchType',
         templateUrl: 'angular-app/products/templates/index.html',
         controller: 'ProductsCtrl'
+      });
+
+    $stateProvider
+      .state('productDetail',{
+        url: '/product/:productId',
+        templateUrl: 'angular-app/products/templates/show.html',
+        controller: 'ProductCtrl'
       });
   };
 

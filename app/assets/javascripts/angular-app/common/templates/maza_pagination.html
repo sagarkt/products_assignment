@@ -1,0 +1,24 @@
+<div class="container pagination-box" ng-if="totalItems > perPageItems">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-6 col-xs-12">
+      <ul class="pagination category-pagination">
+        <li ng-click="changePage(1)">
+          <a href="javascript:void(0);">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> First</a>
+        </li>
+        <li ng-repeat="pageNo in range() track by pageNo"
+            ng-class="currentPage == pageNo ? 'active' : ''"
+            ng-click="changePage(pageNo)">
+          <a href="javascript:void(0);">{{pageNo}}</a>
+        </li>
+        <li ng-click="navigateToLastPage()">
+          <a href="javascript:void(0);">
+            Last <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

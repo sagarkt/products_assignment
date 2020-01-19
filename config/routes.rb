@@ -4,14 +4,14 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: %i[registration session password], controllers: { confirmations: 'confirmations', sessions: 'sessions', registrations: 'registrations' }
   as :user do
-    # User Registration
-    # post '/users', to: 'registrations#create', :as => :new_user_registration
-    # User Session
     post '/users/signin', to: 'sessions#create', as: :user_session
     get '/users/get_current_user'
     delete '/users/signout', to: 'sessions#destroy', as: :destroy_user_session
-    # User Password updation
-    # put '/users/password', to: 'devise/passwords#edit', as: :edit_user_password
-    # patch '/users/password', to: 'devise/passwords#edit', as: :user_password
+
+    resources :products, only: %i[show] do
+      collection do
+        get :filter
+      end
+    end
   end
 end

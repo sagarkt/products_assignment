@@ -17,7 +17,7 @@
 
       function onSuccess(response) {
         $rootScope.currentUser = response.data;
-        $state.go('productsIndex');
+        $state.go('productsSearch');
       }
     }
 
