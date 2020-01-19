@@ -6,6 +6,9 @@ require 'active_model/railtie'
 require 'sprockets/railtie'
 require 'rails/test_unit/railtie'
 require 'dotenv';
+require "action_cable/engine"
+require 'active_job/railtie'
+require 'action_mailer/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
