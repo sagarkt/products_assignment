@@ -28,7 +28,6 @@
 //= require_tree ./angular-app/home_page/module
 //= require_tree ./angular-app/home_page/controllers
 //= require_tree ./angular-app/home_page/templates
-//= require_tree ./angular-app/home_page/services
 //
 //= require_tree ./angular-app/products/module
 //= require_tree ./angular-app/products/controllers
