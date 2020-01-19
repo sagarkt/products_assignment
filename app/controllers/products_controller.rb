@@ -15,6 +15,12 @@ class ProductsController < ApplicationController
     render json: product.as_json
   end
 
+  def export_to_xls
+    respond_to do |format|
+      format.xlsx {render xlsx: 'download', filename: "products.xlsx"}
+    end
+  end
+
   private
 
   def filter_params

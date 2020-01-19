@@ -1,0 +1,15 @@
+@workbook = xlsx_package.workbook
+@sheet = @workbook.add_worksheet(:name => 'Product List')
+
+@sheet.add_row ['Name', 'Model', 'Brand', 'Year', 'RAM', 'External Storage']
+Product.all.each do |product|
+  row = []
+  row.push(product.name)
+  row.push(product.model)
+  row.push(product.brand)
+  row.push(product.year)
+  row.push(product.ram)
+  row.push(product.external_storage)
+  @sheet.add_row row
+  @sheet.add_hyperlink location: "#{request.base_url}/#!/product/#{product._id}", ref: @sheet.rows.last.cells.first
+end

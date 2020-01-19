@@ -16,6 +16,8 @@
 //= require angular-rails-templates
 //= require angular-app/app
 
+//= require_tree ./lib
+
 //= require_tree ./angular-app/common/module
 //= require_tree ./angular-app/common/directives
 //= require_tree ./angular-app/common/services

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :products, only: %i[show] do
       collection do
         get :filter
+        get :export_to_xls
       end
     end
   end

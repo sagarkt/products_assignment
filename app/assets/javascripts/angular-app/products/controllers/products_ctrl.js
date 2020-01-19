@@ -43,6 +43,22 @@
       Utils.setUrl(angular.copy($scope.filter), redirectToSearchPage);
     }
 
+    $scope.exportToXls = function() {
+      ProductService.exportProducts().then(onSuccess, onFailure);
+
+      function onSuccess(response) {
+        var pdf = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;' });
+        saveAs(pdf, 'products.xlsx');
+        // var xls = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;' });
+        // var link = window.document.createElement('a');
+        // link.href = window.URL.createObjectURL(xls);
+        // link.download = link.href.split('/').pop() + '.xlsx';
+        // document.body.appendChild(link);
+        // link.click();
+        // document.body.removeChild(link);
+      }
+    }
+
     function redirectToSearchPage(params) {
       $state.go('productsSearch', params)
     }

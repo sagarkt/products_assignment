@@ -31,6 +31,9 @@ gem 'dotenv-rails', '2.7.5'
 
 gem 'bootstrap-sass', '~> 3.4.1'
 
+gem 'axlsx', '1.3.6'
+gem 'axlsx_rails', '0.6.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

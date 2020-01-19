@@ -21,5 +21,20 @@
       };
       return PromiseFactory.generateHttpPromise(requestDetails);
     }
+
+    this.exportProducts = function() {
+
+      var requestDetails = {
+        url: '/products/export_to_xls.xlsx',
+        method: "GET",
+        responseType: 'arraybuffer',
+        headers: {
+         'Content-Type': 'application/json',
+         'Accept': 'application/vnd.openxmlformats-officedocuments.spreadsheetml.sheet'
+       }
+     };
+
+     return PromiseFactory.generateHttpPromise(requestDetails);
+    };
   }
 })();
